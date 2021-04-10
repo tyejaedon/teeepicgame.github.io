@@ -188,7 +188,7 @@ this.setWeather(this.weather);
         gameState.player.anims.play('idle', true);
       }
 
-      if (Phaser.Input.Keyboard.JustDown(gameState.cursors.space) && gameState.player.body.touching.down) {
+      if (gameState.cursors.space.isDown|| gameState.cursors.up.isDown && gameState.player.body.touching.down) {
         gameState.player.anims.play('jump', true);
         gameState.player.setVelocityY(-600);
       }
